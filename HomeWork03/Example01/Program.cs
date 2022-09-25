@@ -9,18 +9,21 @@ int Inversion(int number)
     }
     return date;
 }
-Console.WriteLine("Здравствуйте. Данная программа позволяет выводит палиндром ваше число или нет.");
-Console.WriteLine("Введите пятизначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int variable = 0;
-while (Math.Abs(number) > 99999 || Math.Abs(number) < 10000)
+int Check(int number)
 {
-    Console.WriteLine("Ошибка!!! Вы ввели не пятизначное число");
-    Console.Write("Введите число: ");
-    number = Convert.ToInt32(Console.ReadLine());
+    while (number > 99999 || number < 10000)
+    {
+        Console.WriteLine("Ошибка!!! Вы ввели число не удовлетворяющее условию");
+        Console.Write("Введите положительное пятизначное число: ");
+        number = Convert.ToInt32(Console.ReadLine());
+    }
+    return number;
 }
-
-variable = Inversion(number);
+Console.WriteLine("Здравствуйте. Данная программа позволяет выводить палиндром ваше число или нет.");
+Console.WriteLine("Введите положительное пятизначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+number = Check(number);
+int variable = Inversion(number);
 
 if (Math.Abs(number) == Math.Abs(variable))
 {
