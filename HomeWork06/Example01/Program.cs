@@ -3,6 +3,8 @@
 // 1, -7, 567, 89, 223-> 3
 
 Console.Clear();
+Console.WriteLine("Здравствуйте. Данная программа выведет на экран сколько положительных чисел вы ввели");
+Console.WriteLine("Введите числа через пробел. После окончания ввода нажмите клавишу Enter");
 string str = Console.ReadLine();
 string[] arrayStr = str.Split(' ');
 int[] arrayInt = Array.ConvertAll(arrayStr, int.Parse);
