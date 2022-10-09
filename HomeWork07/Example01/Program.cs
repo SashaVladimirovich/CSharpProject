@@ -31,33 +31,22 @@ void PrintMatrix(double[,] matrix)
         Console.WriteLine();
     }
 }
-int CheckRow(int row)
+int Check(int position)
 {
-    while (row <= 0)
+    while (position <= 0)
     {
-        Console.WriteLine("Ошибка!!! Количество строк массива может быть только положительным числом");
-        Console.Write("Введите количество строк массива ");
-        row = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Ошибка!!! Количество строк и колонок массива может быть только положительным числом");
+        Console.WriteLine("Введите значение заново ");
+        position = Convert.ToInt32(Console.ReadLine());
     }
-    return row;
-}
-int CheckCol(int col)
-{
-    while (col <= 0)
-    {
-        Console.WriteLine("Ошибка!!! Количество колонок массива может быть только положительным числом");
-        Console.Write("Введите количество колонок массива ");
-        col = Convert.ToInt32(Console.ReadLine());
-    }
-    return col;
-
+    return position;
 }
 Console.WriteLine("Введите количество строк массива");
 int row = Convert.ToInt32(Console.ReadLine());
-row = CheckRow(row);
+row = Check(row);
 Console.WriteLine("Введите количество колонок массива");
 int col = Convert.ToInt32(Console.ReadLine());
-col = CheckCol(col);
+col = Check(col);
 double[,] matrix = CreateMatrix(row, col);
 FillMatrix(matrix);
 PrintMatrix(matrix);
